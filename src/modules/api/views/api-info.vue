@@ -1,5 +1,5 @@
 <template lang="pug">
-.api-container
+.api-info
   h1 API
 </template>
 

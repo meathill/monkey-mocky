@@ -1,7 +1,8 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
-import ApiContainer from '../modules/api/views/api-container';
+import About from '../views/About';
+import API from '../modules/api/router';
 
 Vue.use(VueRouter);
 
@@ -9,18 +10,14 @@ const routes = [
   {
     path: '/',
     name: 'Home',
-    component: Home
+    component: Home,
   },
   {
-    path: '/api/:id',
-    name: 'api.info',
-    component: ApiContainer,
+    path: '/',
+    name: 'about',
+    component: About,
   },
-  {
-    path: '/api/new',
-    name: 'api.new',
-    component: ApiContainer,
-  },
+  API,
 ]
 
 const router = new VueRouter({

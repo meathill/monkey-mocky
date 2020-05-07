@@ -1,20 +1,24 @@
 <template lang="pug">
-  #app.container
-    aside
-      h4.navigation-header APIs
-      ul.nav.flex-column
-        li.nav-item(v-for="api in apis")
-          router-link.nav-link(
-            :to="{name: 'api.info', params: {id: api.id}}",
-          ) {{api.label}}
+#app.container
+  nav.navbar.navbar-light.bg-light.navbar-expand-md
+    a.navbar-brand(href="#") Mocky Monkey
 
-      .add-api-button
-        router-link.btn.btn-outline-primary.btn-block(
-          :to="{name: 'api.new'}",
-          @click="onBeforeLeave",
-        ) New API
+    ul.navbar-nav
+      router-link.nav-item(
+        tag="li",
+        active-class="active",
+        :to="{name: 'api'}",
+      )
+        a.nav-link APIs
 
-    router-view.main-content
+      router-link.nav-item(
+        tag="li",
+        :to="{name: 'about'}",
+        active-class="active",
+      )
+        a.nav-link About
+
+  router-view.main-content
 </template>
 
 <script>
