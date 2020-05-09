@@ -1,6 +1,7 @@
 <template lang="pug">
 .home
-  h1 Welcome to Mocky Monkey
+  section
+    h1 Welcome to Mocky Monkey
 </template>
 
 <script>

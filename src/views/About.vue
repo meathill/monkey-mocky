@@ -1,4 +1,9 @@
 <template lang="pug">
 .about
-  h1 This is an about page
+  section
+    h1 About Mocky Monkey
+    article Monkey Mocky is a mock server, a document generator, and a test runner, mainly built to help FE developers to do their job efficiently.
+
+  aside
+
 </template>

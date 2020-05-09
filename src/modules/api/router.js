@@ -3,22 +3,21 @@ import ApiInfo from './views/api-info';
 import Welcome from './views/api-welcome';
 
 export default {
-  path: 'api',
-  name: 'api',
+  path: '/api/',
   component: ApiLayout,
   children: [
     {
-      path: '/',
-      name: 'api.welcome',
+      path: '',
+      name: 'api',
       component: Welcome,
     },
     {
-      path: '/:id',
+      path: ':id',
       name: 'api.info',
       component: ApiInfo,
     },
     {
-      path: '/new',
+      path: 'new',
       name: 'api.new',
       component: ApiInfo,
     },

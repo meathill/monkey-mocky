@@ -1,7 +1,7 @@
 <template lang="pug">
 #app.container
   nav.navbar.navbar-light.bg-light.navbar-expand-md
-    a.navbar-brand(href="#") Mocky Monkey
+    router-link.navbar-brand(:to="{name: 'home'}") Mocky Monkey
 
     ul.navbar-nav
       router-link.nav-item(

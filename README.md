@@ -2,7 +2,7 @@ Monkey Mocky
 ========
 
 Monkey Mocky is a mock server, a document generator, and a test runner, mainly
-built to help FE developers to do their job efficiently
+built to help FE developers to do their job efficiently.
 
 默契猴（Monkey Mocky）整合了模拟数据服务、文档生成、测试执行器三种功能。
 希望能让前端开发者的工作更有效率。

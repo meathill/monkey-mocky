@@ -19,6 +19,16 @@
 
 <script>
 export default {
+  data() {
+    return {
+      apis: [],
+    };
+  },
 
+  methods: {
+    onBeforeLeave() {
+
+    },
+  },
 }
 </script>
