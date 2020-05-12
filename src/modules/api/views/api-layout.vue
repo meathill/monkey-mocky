@@ -12,7 +12,9 @@
       router-link.btn.btn-outline-primary.btn-block(
         :to="{name: 'api.new'}",
         @click="onBeforeLeave",
-      ) New API
+      )
+        i.fas.fa-plus.mr-2
+        | New API
 
   router-view.api-content
 </template>
@@ -30,5 +32,5 @@ export default {
 
     },
   },
-}
+};
 </script>
