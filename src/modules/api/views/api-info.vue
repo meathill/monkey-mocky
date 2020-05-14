@@ -30,21 +30,39 @@
     .form-group.row
       label.col-form-label.col-sm-2.text-right Fields
       .col-sm-10
-        table.table.table-hover.table-sm
+        table.table.table-hover.table-sm.form-table
           thead.thead-light
             tr
               th Name
               th Type
               th Optional
               th Default
-              th Details
+              th Validators
               th
           tbody
-            tr(v-for="(field, index) in fields")
-              td {{field.name}}
-              td {{field.type}}
-              td {{field.optional}}
-              td {{field.default}}
+            tr(v-for="(field, index) in formData.fields")
+              td
+                input.form-control(
+                  v-model="field.name",
+                  placeholder="Name",
+                  required,
+                )
+              td
+                select.form-control(
+                  v-model="field.type",
+                )
+                  option(v-for="(label, value) in FieldType" :value="value") {{label}}
+              td
+                .d-flex.justify-content-center
+                  input(
+                    type="checkbox",
+                    v-model="field.optional",
+                  )
+              td
+                input.form-control(
+                  v-model="field.default",
+                  placeholder="Default",
+                )
               td
               td
                 .btn-group-sm
@@ -52,10 +70,10 @@
                     type="button",
                     @click="doRemoveField(field, index)",
                   )
-                    i.fas.fa-trash
+                    i.fas.fa-times
           tfoot
             tr
-              td(colspan="6")
+              td.pt-2(colspan="6")
                 button.btn.btn-info(
                   type="button",
                   @click="doAddField()",
@@ -81,7 +99,7 @@
 
 <script>
 import defaults from 'lodash/defaults';
-import {CRUD} from '@/data/api';
+import {CRUD, FieldType} from '@/data';
 
 export default {
   computed: {
@@ -94,6 +112,7 @@ export default {
   data() {
     return {
       CRUD,
+      FieldType,
       isSaving: false,
       formData: null,
     };
@@ -101,10 +120,16 @@ export default {
 
   methods: {
     doAddField() {
-
+      this.formData.fields.push({
+        name: '',
+        type: 'string',
+        optional: true,
+        default: '',
+        validators: {},
+      });
     },
     doRemoveField(field, index) {
-
+      console.log(field, index);
     },
     doSubmit() {
 
