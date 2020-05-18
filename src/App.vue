@@ -1,5 +1,5 @@
 <template lang="pug">
-#app.container
+#app
   nav.navbar.navbar-light.bg-light.navbar-expand-md
     router-link.navbar-brand(:to="{name: 'home'}") Mocky Monkey
 
@@ -10,6 +10,13 @@
         :to="{name: 'api'}",
       )
         a.nav-link APIs
+
+      router-link.nav-item(
+        tag="li",
+        active-class="active",
+        :to="{name: 'plugin'}",
+      )
+        a.nav-link Plugins
 
       router-link.nav-item(
         tag="li",

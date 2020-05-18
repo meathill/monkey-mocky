@@ -1,8 +1,9 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
-import Home from '../views/Home.vue';
-import About from '../views/About';
-import API from '../modules/api/router';
+import Home from '@/views/Home.vue';
+import About from '@/views/About';
+import API from '@/modules/api/router';
+import Plugin from '@/modules/plugin/router';
 
 Vue.use(VueRouter);
 
@@ -18,6 +19,7 @@ const routes = [
     component: About,
   },
   API,
+  Plugin,
 ];
 
 const router = new VueRouter({
