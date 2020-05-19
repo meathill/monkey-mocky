@@ -3,12 +3,15 @@
   aside
     h4.navigation-header {{title}}
     ul.nav.flex-column
-      li.nav-item(v-for="nav in navs")
-        router-link.nav-link(
-          :to="{name: nav.name, params: {id: name.id}}",
-        ) {{nav.label}}
+      router-link.nav-item(
+        v-for="nav in navs",
+        tag="li",
+        :key="nav.id",
+        :to="{name: nav.name, params: {id: nav.id}}",
+      )
+        a.nav-link {{nav.label}}
 
-    .add-item-button
+    .add-item-button(v-if="newItemRoute")
       router-link.btn.btn-outline-primary.btn-block(
         :to="{name: newItemRoute}",
       )

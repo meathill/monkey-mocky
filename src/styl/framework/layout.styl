@@ -1,0 +1,57 @@
+.layout-with-sidebar
+  display flex
+
+  aside
+    border-right 1px solid #EEE
+    width 12.5rem
+    margin-right .5rem
+    padding-top .25rem
+
+    .nav-item
+      border-top 1px solid #EEE
+      border-bottom 1px solid #EEE
+      margin-bottom 1em
+
+      a
+        color #444
+
+      &:hover,
+      &.router-link-active
+        background-color var(--primary)
+
+        a
+          color white
+
+      &.router-link-active
+        font-weight bold
+        position relative
+
+        &::before
+          content ''
+          color white
+          position absolute
+          top 50%
+          left .25rem
+          margin-top -.25rem
+          width 0
+          height 0
+          border-top .25rem solid transparent
+          border-bottom .25rem solid transparent
+          border-left .25rem solid currentColor
+
+  .content-container
+    flex 1
+    padding .5rem
+
+  h4.navigation-header
+    color var(--gray)
+    font-size .75rem
+    line-height 3.5
+    padding 0 1rem
+    margin-bottom 0
+
+  .add-item-button
+    padding 0 1rem
+
+    .btn
+      font-size 14px

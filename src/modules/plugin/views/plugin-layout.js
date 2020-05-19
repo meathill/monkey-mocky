@@ -6,7 +6,13 @@ export default {
   data() {
     return {
       title: 'Plugin',
-      newItemRoute: 'plugin.new',
+      navs: [
+        {
+          name: 'plugin.info',
+          label: 'Login',
+          id: 'login',
+        },
+      ],
     };
   },
 }
